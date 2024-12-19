@@ -83,7 +83,6 @@ contract SlashIndicator is ISlashIndicator, System, IParamSubscriber, IApplicati
     function init() external onlyNotInit {
         misdemeanorThreshold = MISDEMEANOR_THRESHOLD;
         felonyThreshold = FELONY_THRESHOLD;
-		enableMaliciousVoteSlash = true;
         alreadyInit = true;
     }
 

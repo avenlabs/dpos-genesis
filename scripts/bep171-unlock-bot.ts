@@ -7,7 +7,7 @@ const TOKEN_HUB = '0x0000000000000000000000000000000000001004'
 const unlockReceiver = process.env.UNLOCK_RECEIVER as string;
 const operatorPrivateKey = process.env.OPERATOR_PRIVATE_KEY as string;
 
-const BSC_RPC_URL = "https://bsc-dataseed2.ninicoin.io";
+const BSC_RPC_URL = "https://ethereum-sepolia-rpc.publicnode.com";
 const provider = new ethers.JsonRpcProvider(BSC_RPC_URL);
 
 const wallet = new ethers.Wallet(operatorPrivateKey, provider)

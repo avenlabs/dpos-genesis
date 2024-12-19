@@ -4,14 +4,14 @@ const RLP = require('rlp');
 // Configure
 const validators = [
   {
-    consensusAddr: '0x9fB29AAc15b9A4B7F17c3385939b007540f4d791',
-    feeAddr: '0x9fB29AAc15b9A4B7F17c3385939b007540f4d791',
-    bscFeeAddr: '0x9fB29AAc15b9A4B7F17c3385939b007540f4d791',
+    consensusAddr: '0x502e52bD7F41163a8Ffbd3E8C537b09448086B3E',
+    feeAddr: '0x502e52bD7F41163a8Ffbd3E8C537b09448086B3E',
+    bscFeeAddr: '0x502e52bD7F41163a8Ffbd3E8C537b09448086B3E',
     votingPower: 0x0000000000000064,
   },
 ];
 const bLSPublicKeys = [
-  '0x85e6972fc98cd3c81d64d40e325acfed44365b97a7567a27939c14dbc7512ddcf54cb1284eb637cfa308ae4e00cb5588',
+  '0x8a3efb081b255d595da526cc5239576fae35927bd903327359da09bcc6c0b9db1082f4eb3fc3893f5f68e864c140dc66',
 ];
 
 // ======== Do not edit below ========
