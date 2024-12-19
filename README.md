@@ -1,73 +1,33 @@
-# bsc-genesis-contracts
+# Genesis Contract Delegate Proof Of Stake
 
-This repo hold all the genesis contracts on BNB Smart chain. More details in [doc-site](https://docs.bnbchain.org/docs/learn/system-contract).
+This repo hold all the genesis contracts Based BNB Smart chain. More details in [doc-site](https://docs.bnbchain.org/docs/learn/system-contract).
 
 ## Prepare
 
 Install node.js dependency:
 ```shell script
 npm install
-```
-
-Install foundry:
-```shell script
-curl -L https://foundry.paradigm.xyz | bash
-foundryup
-forge install --no-git --no-commit foundry-rs/forge-std@v1.7.3
-```
-
-Install poetry:
-```shell script
 curl -sSL https://install.python-poetry.org | python3 -
 poetry install
-```
-
-Tips: You can manage multi version of Node:
-```Shell
-## Install nvm and node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 nvm install  12.18.3 && nvm use 12.18.3
 ```
 
-## Unit test
-
-Add follow line to .env file in project dir, replace `archive_node` with a valid bsc mainnet node url which should be in archive mode:
-
-```text
-RPC_BSC=${archive_node}
-```
-
-You can get a free archive node endpoint from https://nodereal.io/.
-
-Run forge test:
-```shell script
+## Build With JS
+```shell
+forge install --no-git --no-commit foundry-rs/forge-std@v1.7.3
+export RPC_BSC=RPC_LINK
 forge test
 ```
 
-## Flatten all system contracts
-
-```shell script
-bash scripts/flatten.sh
-```
-
-All system contracts will be flattened and output into `${workspace}/contracts/flattened/`.
-
 ## How to generate genesis file
 
+```bash
 1. Edit `init_holders.js` file to alloc the initial BNB holder.
 2. Edit `validators.js` file to alloc the initial validator set.
 3. Edit system contracts setting as needed.
-4. Run `node scripts/generate-genesis.js` will generate genesis.json
-
-## How to generate mainnet/testnet/dev genesis file
-
-```shell 
-poetry run python -m scripts.generate ${network}
+4. Run `node scripts/generate-genesis.js -c 69696969 -t genesis-template.json -o genesis-mainnnet.json` will generate genesis-mainnnet.json
 ```
-Check the `genesis.json` file, and you can get the exact compiled bytecode for different network.
-(`poetry run python -m scripts.generate --help ` for more details)
-
-You can refer to `generate:dev` in `package.json` for more details about how to custom params for local dev-net.
 
 ## How to update contract interface for test
 
